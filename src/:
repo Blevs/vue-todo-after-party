@@ -1,0 +1,57 @@
+<template>
+  <div id="app">
+    <h1>Todos</h1>
+    <div>
+      <div class="todo" v-for="todo in todos" :key="todo.id">
+        {{ todo.task }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data() {
+    return {
+        todos: [
+            {
+                id: 1,
+                task: "Learn vue",
+                completed: false
+            },
+            {
+                id: 2,
+                task: "Eat food",
+                completed: true
+            }
+        ]
+    }
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+.todo {
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #fafafa;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+ .todo:hover {
+     background-color: #aaaaaa;
+ }
+</style>
